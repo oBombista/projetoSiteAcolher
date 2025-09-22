@@ -78,55 +78,19 @@ st.markdown(f"""
 def carregar_dados():
     """Carrega e processa os dados da planilha Excel"""
     try:
-        # Debug: Lista todos os arquivos na pasta
-        arquivos_pasta = os.listdir('.')
-        arquivos_excel = [f for f in arquivos_pasta if f.endswith('.xlsx')]
-        
-        st.write("🔍 **Debug - Arquivos encontrados:**")
-        st.write(f"Todos os arquivos: {arquivos_pasta}")
-        st.write(f"Arquivos Excel: {arquivos_excel}")
-        
-        # Procura por arquivos Excel com nomes similares
-        arquivos_possiveis = [
-            'Cadastro_Visitantes.xlsx',
-            'cadastro_visitantes.xlsx',
-            'visitantes.xlsx',
-            'dados_visitantes.xlsx'
-        ]
-        
-        planilha_encontrada = None
-        for arquivo in arquivos_possiveis:
-            if os.path.exists(arquivo):
-                planilha_encontrada = arquivo
-                st.write(f"✅ Planilha encontrada: {arquivo}")
-                break
-        
-        if planilha_encontrada:
-            # Carrega a planilha real
-            df = pd.read_excel(planilha_encontrada)
-            st.write(f"📊 Dados carregados: {len(df)} registros")
-            
-            # Verifica se tem dados reais (mais de 1 linha)
-            if len(df) > 1:
-                st.success("✅ Dados reais carregados com sucesso!")
-            else:
-                st.warning("⚠️ Planilha encontrada mas com poucos dados. Usando dados de exemplo...")
-                # Se tem poucos dados, cria dados de exemplo
-                criar_dados_exemplo()
-                df = pd.read_excel('Cadastro_Visitantes.xlsx')
-        else:
-            # Se não existe planilha, cria dados de exemplo
-            st.info("📊 Nenhuma planilha encontrada. Criando dados de exemplo para demonstração...")
+        # Verifica se o arquivo existe, se não, cria dados de exemplo
+        if not os.path.exists('Cadastro_Visitantes.xlsx'):
+            st.info("📊 Criando dados de exemplo para demonstração...")
+            # Importa e executa o script de dados de exemplo
             try:
                 from dados_exemplo import criar_dados_exemplo
                 criar_dados_exemplo()
-            except Exception as e:
-                st.write(f"❌ Erro ao criar dados de exemplo: {e}")
+            except:
                 # Se não conseguir importar, cria dados básicos
                 criar_dados_basicos()
-            
-            # Carrega os dados de exemplo criados
-            df = pd.read_excel('Cadastro_Visitantes.xlsx')
+        
+        # Carrega a planilha Excel
+        df = pd.read_excel('Cadastro_Visitantes.xlsx')
         
         # Renomeia as colunas para facilitar o trabalho
         colunas_mapeadas = {
