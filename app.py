@@ -406,7 +406,7 @@ def main():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col1:
         if os.path.exists("assets/Logo_Ministerio.png"):
-            st.image("assets/Logo_Ministerio.png", width=120, use_container_width=False)
+            st.image("assets/Logo_Ministerio.png", use_container_width=False)
     with col2:
         st.markdown("""
         <div class="header-section">
@@ -415,9 +415,6 @@ def main():
             <h3>📊 Dashboard de Análise de Visitantes 📊</h3>
         </div>
         """, unsafe_allow_html=True)
-    with col3:
-        if os.path.exists("assets/Logo_Igreja.png"):
-            st.image("assets/Logo_Igreja.png", width=120, use_container_width=False)
     
     df = carregar_dados()
     
