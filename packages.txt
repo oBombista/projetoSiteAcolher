@@ -1,6 +1,0 @@
-# Arquivo de pacotes do sistema para Streamlit Cloud
-# Este arquivo é usado para instalar dependências do sistema operacional
-# se necessário
-
-# Para este projeto, não precisamos de pacotes extras
-# Mas mantemos o arquivo para compatibilidade
