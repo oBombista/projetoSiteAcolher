@@ -78,19 +78,30 @@ st.markdown(f"""
 def carregar_dados():
     """Carrega e processa os dados da planilha Excel"""
     try:
-        # Verifica se o arquivo existe, se não, cria dados de exemplo
-        if not os.path.exists('Cadastro_Visitantes.xlsx'):
-            st.info("📊 Criando dados de exemplo para demonstração...")
-            # Importa e executa o script de dados de exemplo
+        # Verifica se existe a planilha real primeiro
+        if os.path.exists('Cadastro_Visitantes.xlsx'):
+            # Carrega a planilha real
+            df = pd.read_excel('Cadastro_Visitantes.xlsx')
+            # Verifica se tem dados reais (mais de 1 linha)
+            if len(df) > 1:
+                st.success("✅ Dados reais carregados com sucesso!")
+            else:
+                st.warning("⚠️ Planilha encontrada mas com poucos dados. Usando dados de exemplo...")
+                # Se tem poucos dados, cria dados de exemplo
+                criar_dados_exemplo()
+                df = pd.read_excel('Cadastro_Visitantes.xlsx')
+        else:
+            # Se não existe planilha, cria dados de exemplo
+            st.info("📊 Planilha não encontrada. Criando dados de exemplo para demonstração...")
             try:
                 from dados_exemplo import criar_dados_exemplo
                 criar_dados_exemplo()
             except:
                 # Se não conseguir importar, cria dados básicos
                 criar_dados_basicos()
-        
-        # Carrega a planilha Excel
-        df = pd.read_excel('Cadastro_Visitantes.xlsx')
+            
+            # Carrega os dados de exemplo criados
+            df = pd.read_excel('Cadastro_Visitantes.xlsx')
         
         # Renomeia as colunas para facilitar o trabalho
         colunas_mapeadas = {
