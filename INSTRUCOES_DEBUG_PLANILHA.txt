@@ -1,0 +1,90 @@
+========================================
+  MINISTÉRIO ACOLHER - DEBUG PLANILHA
+  Igreja Nova Vida de Maricá
+========================================
+
+🔍 PROBLEMA: Planilha não encontrada no deploy
+✅ SOLUÇÃO: Sistema de debug implementado
+
+🚀 COMO RESOLVER:
+
+📋 PASSO 1 - DIAGNÓSTICO:
+1. Execute: python verificar_planilha.py
+2. Ou clique em: verificar_planilha.bat
+3. Verifique se a planilha aparece na lista
+
+📋 PASSO 2 - DEBUG NO DASHBOARD:
+1. Acesse o dashboard no Streamlit Cloud
+2. Procure pela seção "Debug - Arquivos encontrados"
+3. Veja quais arquivos estão sendo detectados
+
+📋 PASSO 3 - VERIFICAR ARQUIVO:
+✅ Nome correto: Cadastro_Visitantes.xlsx
+✅ Tamanho: Menos de 25MB
+✅ Formato: .xlsx (Excel)
+✅ Localização: Pasta raiz do projeto
+
+📋 PASSO 4 - ENVIAR CORRETAMENTE:
+1. git add Cadastro_Visitantes.xlsx
+2. git commit -m "Adicionar planilha real"
+3. git push origin main
+4. Aguarde 2-3 minutos para redeploy
+
+🔍 POSSÍVEIS CAUSAS:
+
+❌ ARQUIVO NÃO ENVIADO:
+- Verifique se está no .gitignore
+- Confirme se fez git add
+- Verifique tamanho do arquivo
+
+❌ NOME INCORRETO:
+- Deve ser exatamente: Cadastro_Visitantes.xlsx
+- Sem espaços extras
+- Sem caracteres especiais
+
+❌ ARQUIVO CORROMPIDO:
+- Abra no Excel e salve novamente
+- Teste com arquivo menor
+- Verifique formato .xlsx
+
+❌ CACHE DO STREAMLIT:
+- Pressione Ctrl+F5 no navegador
+- Aguarde alguns minutos
+- Faça alteração pequena no código
+
+✅ SINAIS DE SUCESSO:
+
+📊 DEBUG MOSTRA:
+✅ Planilha encontrada: Cadastro_Visitantes.xlsx
+📊 Dados carregados: X registros
+✅ Dados reais carregados com sucesso!
+
+📈 DASHBOARD MOSTRA:
+✅ Métricas com números reais
+✅ Gráficos com dados da sua planilha
+✅ Cidades reais da sua região
+✅ Não mostra mais "dados de exemplo"
+
+🛠️ FERRAMENTAS CRIADAS:
+
+🔍 verificar_planilha.py - Diagnóstico completo
+🔍 verificar_planilha.bat - Script batch para Windows
+📖 SOLUCAO_PLANILHA_NAO_ENCONTRADA.md - Guia detalhado
+📖 INSTRUCOES_DEBUG_PLANILHA.txt - Este arquivo
+
+🆘 SE NADA FUNCIONAR:
+
+1. Execute: python verificar_planilha.py
+2. Copie toda a saída do comando
+3. Acesse o dashboard e copie a seção de debug
+4. Envie essas informações para o desenvolvedor
+
+📞 SUPORTE:
+📖 Guia completo: SOLUCAO_PLANILHA_NAO_ENCONTRADA.md
+📖 Debug: verificar_planilha.py
+📖 Documentação: README.md
+
+========================================
+Desenvolvido por @TiagoBombista com ❤️
+Para o crescimento do Reino de Deus
+========================================

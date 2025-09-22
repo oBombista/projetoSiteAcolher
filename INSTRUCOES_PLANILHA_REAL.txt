@@ -1,0 +1,87 @@
+========================================
+  MINISTÉRIO ACOLHER - PLANILHA REAL
+  Igreja Nova Vida de Maricá
+========================================
+
+🎯 PROBLEMA RESOLVIDO:
+✅ Deploy agora usa planilha real em vez de dados de exemplo
+✅ Sistema detecta automaticamente se tem dados reais
+✅ Backup automático dos dados de exemplo
+
+🚀 COMO USAR SUA PLANILHA REAL:
+
+📋 MÉTODO MAIS FÁCIL:
+1. Clique duas vezes em "preparar_deploy.bat"
+2. Escolha opção 1 (Preparar planilha real)
+3. Execute os comandos git que aparecerão
+4. Pronto! Deploy atualizado com dados reais
+
+📋 MÉTODO MANUAL:
+1. Renomeie sua planilha para "Cadastro_Visitantes.xlsx"
+2. Execute: python subir_planilha_real.py
+3. Escolha opção 1
+4. Execute os comandos git
+
+📋 MÉTODO DIRETO:
+1. Renomeie sua planilha para "Cadastro_Visitantes.xlsx"
+2. git add Cadastro_Visitantes.xlsx
+3. git commit -m "Adicionar planilha real"
+4. git push origin main
+
+🔍 ARQUIVOS RECONHECIDOS:
+✅ Cadastro_Visitantes.xlsx
+✅ cadastro_visitantes.xlsx
+✅ visitantes.xlsx
+✅ dados_visitantes.xlsx
+
+📊 VERIFICAÇÕES AUTOMÁTICAS:
+✅ Detecta se tem planilha real
+✅ Verifica quantidade de dados (>1 linha)
+✅ Confirma estrutura das colunas
+✅ Faz backup dos dados de exemplo
+
+💡 MENSAGENS DO SISTEMA:
+✅ "Dados reais carregados com sucesso!" = Planilha real funcionando
+⚠️ "Planilha com poucos dados" = Poucos registros, usando exemplo
+📊 "Planilha não encontrada" = Sem planilha, usando exemplo
+
+🔄 ALTERNAR DADOS:
+📊 Voltar aos exemplos: python subir_planilha_real.py (opção 2)
+📋 Usar planilha real: python subir_planilha_real.py (opção 1)
+
+🛠️ PROBLEMAS COMUNS:
+❌ "Nenhuma planilha encontrada" → Renomeie para Cadastro_Visitantes.xlsx
+❌ "Poucos dados" → Verifique se tem registros reais
+❌ "Erro no git" → Verifique permissões do repositório
+
+📋 ESTRUTURA ESPERADA:
+✅ Carimbo de data/hora
+✅ Quem está preenchendo a planilha?
+✅ Visita a Igreja Nova Vida de:
+✅ Data da Visita
+✅ Culto
+✅ Nome do visitante
+✅ Telefone com DDD
+✅ Bairro onde mora
+✅ Cidade
+✅ Como ele chegou até a Nova Vida?
+✅ Pertence a alguma igreja ou religião?
+✅ Faixa etaria
+✅ Qual a necessidade do visitante?
+✅ Observações
+
+🎯 BENEFÍCIOS:
+✅ Dashboard com dados reais da sua igreja
+✅ Gráficos baseados na realidade
+✅ Métricas corretas do crescimento
+✅ Análises verdadeiras dos visitantes
+
+📞 SUPORTE:
+📖 Guia completo: GUIA_PLANILHA_REAL.md
+📖 Deploy: DEPLOY_README.md
+📖 Documentação: README.md
+
+========================================
+Desenvolvido por @TiagoBombista com ❤️
+Para o crescimento do Reino de Deus
+========================================
