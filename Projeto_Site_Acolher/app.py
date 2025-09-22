@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
 from datetime import datetime, timedelta
+import os
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -77,6 +78,17 @@ st.markdown(f"""
 def carregar_dados():
     """Carrega e processa os dados da planilha Excel"""
     try:
+        # Verifica se o arquivo existe, se não, cria dados de exemplo
+        if not os.path.exists('Cadastro_Visitantes.xlsx'):
+            st.info("📊 Criando dados de exemplo para demonstração...")
+            # Importa e executa o script de dados de exemplo
+            try:
+                from dados_exemplo import criar_dados_exemplo
+                criar_dados_exemplo()
+            except:
+                # Se não conseguir importar, cria dados básicos
+                criar_dados_basicos()
+        
         # Carrega a planilha Excel
         df = pd.read_excel('Cadastro_Visitantes.xlsx')
         
@@ -113,6 +125,28 @@ def carregar_dados():
     except Exception as e:
         st.error(f"Erro ao carregar dados: {str(e)}")
         return pd.DataFrame()
+
+def criar_dados_basicos():
+    """Cria dados básicos se não conseguir carregar o script de exemplo"""
+    dados_basicos = {
+        'Carimbo de data/hora': ['15/01/2024 10:00:00'],
+        'Quem está preenchendo a planilha?': ['Pastor João'],
+        'Visita a Igreja Nova Vida de:': ['Indicação de amigo'],
+        'Data da Visita': ['15/01/2024'],
+        'Culto': ['Culto de domingo manhã'],
+        'Nome do visitante': ['Visitante Exemplo'],
+        'Telefone com DDD': ['(21) 99999-9999'],
+        'Bairro onde mora': ['Centro'],
+        'Cidade': ['Maricá'],
+        'Como ele chegou até a Nova Vida?': ['Indicação de membro'],
+        'Pertence a alguma igreja ou religião?': ['Não, não pertence a nenhuma igreja'],
+        'Faixa etaria': ['26-35 anos'],
+        'Qual a necessidade do visitante?': ['Orientação espiritual'],
+        'Observações': ['Primeira visita']
+    }
+    
+    df = pd.DataFrame(dados_basicos)
+    df.to_excel('Cadastro_Visitantes.xlsx', index=False)
 
 def criar_metricas_principais(df):
     """Cria as métricas principais do dashboard"""
@@ -467,7 +501,7 @@ def main():
     <div style="text-align: center; color: {CORES['verde_escuro']}; padding: 2rem;">
         <h4>Ministério Acolher - Igreja Nova Vida Maricá</h4>
         <p><em>"Portanto, ide, ensinai todas as nações, batizando-as em nome do Pai, e do Filho, e do Espírito Santo."</em> - Mateus 28:19</p>
-        <p>Desenvolvido com ❤️ para o crescimento do Reino de Deus</p>
+        <p>Desenvolvido por <strong> <a href="https://www.instagram.com/tiagobombista" target="_blank" style="color: {CORES['verde_escuro']}; text-decoration: underline;">@TiagoBombista</a></strong> com ❤️ para o crescimento do Reino de Deus</p>
     </div>
     """, unsafe_allow_html=True)
 
