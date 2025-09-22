@@ -77,7 +77,7 @@ st.markdown(f"""
             color: {CORES['texto_claro']} !important;
         }}
         h1, h2, h3 {{
-            color: {CORES['verde_limao']} !important;
+            color: {CORES['branco']} !important;
         }}
         .info-box {{
             background-color: #2b2b2b;
@@ -127,8 +127,7 @@ def carregar_dados():
         if not os.path.exists('Cadastro_Visitantes.xlsx'):
             st.info("📊 Criando dados de exemplo para demonstração...")
             try:
-                from dados_exemplo import criar_dados_exemplo
-                criar_dados_exemplo()
+                print("Tentando importar criar_dados_basicos...")
             except ImportError:
                 criar_dados_basicos()
         
@@ -287,7 +286,7 @@ def criar_grafico_origem_visitas(df):
             fig = px.pie(
                 values=origem_counts.values, names=origem_counts.index,
                 title='🌍 Origem dos Visitantes',
-                color_discrete_sequence=[CORES['verde_escuro'], CORES['verde_claro'], CORES['verde_limao']]
+                color_discrete_sequence=[CORES['verde_escuro'], CORES['verde_limao'], CORES['verde_limao']]
             )
             fig.update_traces(textposition='inside', textinfo='percent+label')
             st.plotly_chart(fig, use_container_width=True)
@@ -302,7 +301,7 @@ def criar_grafico_faixa_etaria(df):
                 x=faixa_counts.index, y=faixa_counts.values,
                 title='👶👨👴 Distribuição por Faixa Etária',
                 color=faixa_counts.values,
-                color_continuous_scale=[CORES['verde_claro'], CORES['verde_escuro']]
+                color_continuous_scale=[CORES['verde_limao'], CORES['verde_escuro']]
             )
             fig.update_layout(xaxis_title="Faixa Etária", yaxis_title="Quantidade")
             st.plotly_chart(fig, use_container_width=True)
@@ -317,7 +316,7 @@ def criar_grafico_necessidades(df):
                 x=necessidade_counts.values, y=necessidade_counts.index, orientation='h',
                 title='💝 Principais Necessidades dos Visitantes',
                 color=necessidade_counts.values,
-                color_continuous_scale=[CORES['verde_claro'], CORES['verde_escuro']]
+                color_continuous_scale=[CORES['verde_limao'], CORES['verde_escuro']]
             )
             fig.update_layout(xaxis_title="Quantidade", yaxis_title="Necessidade")
             st.plotly_chart(fig, use_container_width=True)
@@ -351,7 +350,7 @@ def criar_grafico_pertence_igreja(df):
         fig = px.pie(
             values=igreja_counts.values, names=igreja_counts.index,
             title='⛪ Situação Religiosa dos Visitantes',
-            color_discrete_sequence=[CORES['verde_escuro'], CORES['verde_claro'], CORES['verde_limao']]
+            color_discrete_sequence=[CORES['verde_escuro'], CORES['verde_limao'], CORES['verde_limao']]
         )
         fig.update_traces(textposition='inside', textinfo='percent+label')
         st.plotly_chart(fig, use_container_width=True)
@@ -413,7 +412,7 @@ def main():
         <div class="header-section">
             <h1>Ministério Acolher</h1>
             <h2>Igreja Nova Vida - Maricá</h2>
-            <h3>📊 Dashboard de Análise de Visitantes</h3>
+            <h3>📊 Dashboard de Análise de Visitantes 📊</h3>
         </div>
         """, unsafe_allow_html=True)
     with col3:
