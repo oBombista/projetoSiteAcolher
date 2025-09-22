@@ -1,0 +1,56 @@
+========================================
+  MINISTÉRIO ACOLHER - INSTRUÇÕES RÁPIDAS
+  Igreja Nova Vida de Maricá
+========================================
+
+🏛️ LOGOS ADICIONADAS:
+✅ Logo do Ministério Acolher (assets/Logo_Ministerio.png)
+✅ Logo da Igreja Nova Vida (assets/Logo_Igreja.png)
+✅ Aparecem no header e na sidebar do dashboard
+
+🔄 ATUALIZAÇÃO SEMANAL DE DADOS:
+
+📋 PROCESSO SIMPLES:
+1. Receba a nova planilha (WhatsApp, email, etc.)
+2. Clique duas vezes em "atualizar_dados.bat"
+3. Escolha opção 2 (Atualização rápida)
+4. Digite o caminho do arquivo Excel
+5. Pronto! Backup automático + dados atualizados
+
+📁 BACKUPS AUTOMÁTICOS:
+✅ Pasta "backups/" criada automaticamente
+✅ Backup antes de cada alteração
+✅ Formato: backup_Cadastro_Visitantes_AAAAMMDD_HHMMSS.xlsx
+✅ Manter pelo menos 4 backups (1 mês)
+
+🚀 EXECUTAR O DASHBOARD:
+- Opção 1: Clique em "instalar_e_executar.bat"
+- Opção 2: Execute "streamlit run app.py"
+- Opção 3: Clique em "run_dashboard.bat"
+
+📊 O QUE VOCÊ VERÁ:
+✅ Logos do Ministério e da Igreja
+✅ Métricas principais (total visitantes, cidades, etc.)
+✅ Gráficos interativos:
+   - Origem dos visitantes
+   - Situação religiosa
+   - Faixa etária
+   - Necessidades
+   - Distribuição geográfica
+   - Evolução temporal
+✅ Filtros por período e cidade
+✅ Design com cores do Ministério Acolher
+
+🆘 PROBLEMAS COMUNS:
+❌ "Arquivo não encontrado" → Verifique o caminho
+❌ "Planilha corrompida" → Abra no Excel e salve novamente
+❌ Dashboard não atualiza → Pare (Ctrl+C) e execute novamente
+
+📞 SUPORTE:
+📖 Guia completo: GUIA_ATUALIZACAO.md
+📖 Como usar: COMO_USAR.txt
+📖 Documentação: README.md
+
+========================================
+Desenvolvido com ❤️ para o Reino de Deus
+========================================
