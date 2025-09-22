@@ -27,42 +27,57 @@ CORES = {
 
 # CSS customizado
 # CSS customizado com suporte a tema claro e escuro
+# CSS customizado com suporte a tema claro e escuro (ajustado)
+
 st.markdown(f"""
 <style>
-    /* Ajuste global */
     .main {{
         padding-top: 2rem;
     }}
 
-    /* Tema claro */
-    @media (prefers-color-scheme: light) {{
-        body, [data-testid="stAppViewContainer"] {{
-            background-color: white !important;
-            color: black !important;
-        }}
-        h1, h2, h3 {{
-            color: {CORES['verde_escuro']} !important;
-        }}
-        .metric-card {{
-            background: linear-gradient(135deg, {CORES['verde_escuro']}, {CORES['verde_claro']});
-            color: white;
-        }}
-        .header-section {{
-            background: linear-gradient(135deg, {CORES['verde_escuro']}, {CORES['verde_claro']});
-            color: white;
-        }}
-        .info-box {{
-            background-color: {CORES['branco']};
-            border-left: 5px solid {CORES['verde_escuro']};
-            color: black;
-        }}
-        .sidebar .sidebar-content {{
-            background: linear-gradient(180deg, {CORES['verde_escuro']}, {CORES['verde_claro']});
-            color: white;
-        }}
+    /* Header fixo com texto branco */
+    .header-section {{
+        background: linear-gradient(135deg, {CORES['verde_escuro']}, {CORES['verde_claro']});
+        padding: 2rem;
+        border-radius: 15px;
+        color: white !important;
+        text-align: center;
+        margin-bottom: 2rem;
     }}
 
-    /* Tema escuro */
+    /* Cards de métricas */
+    .metric-card {{
+        background: linear-gradient(135deg, {CORES['verde_escuro']}, {CORES['verde_claro']});
+        padding: 1rem;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        margin: 0.5rem 0;
+    }}
+
+    /* Caixas de informação */
+    .info-box {{
+        background-color: {CORES['branco']};
+        border-left: 5px solid {CORES['verde_escuro']};
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        color: black;
+    }}
+
+    /* Sidebar */
+    .sidebar .sidebar-content {{
+        background: linear-gradient(180deg, {CORES['verde_escuro']}, {CORES['verde_claro']});
+        color: white;
+    }}
+
+    /* Títulos */
+    h1, h2, h3 {{
+        color: {CORES['verde_escuro']};
+    }}
+
+    /* Ajuste para dark mode */
     @media (prefers-color-scheme: dark) {{
         body, [data-testid="stAppViewContainer"] {{
             background-color: #1e1e1e !important;
@@ -71,22 +86,10 @@ st.markdown(f"""
         h1, h2, h3 {{
             color: {CORES['verde_limao']} !important;
         }}
-        .metric-card {{
-            background: linear-gradient(135deg, {CORES['verde_limao']}, {CORES['verde_claro']});
-            color: black;
-        }}
-        .header-section {{
-            background: linear-gradient(135deg, {CORES['verde_limao']}, {CORES['verde_claro']});
-            color: black;
-        }}
         .info-box {{
             background-color: #2b2b2b;
             border-left: 5px solid {CORES['verde_limao']};
-            color: {CORES['branco']};
-        }}
-        .sidebar .sidebar-content {{
-            background: linear-gradient(180deg, {CORES['verde_limao']}, {CORES['verde_claro']});
-            color: black;
+            color: white;
         }}
     }}
 </style>
